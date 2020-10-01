@@ -1,15 +1,17 @@
 $(document).ready(function(){
     // DOM VARIABLES
-    var currentDate = $('.lead');
+    var currentDate = $('#currentDay');
     var hourDisplay =$('.hour');
     var timeBlockDisplay = $('.time-block');
     var saveButton = $('.saveBtn');
     var ContainerRow = $('.row');
     var textArea = $('textarea');
     // JS VARIABLES
-    var timeZone = moment().format('MMMM Do YYYY, h:mm:ss a');
+    var timeZone = moment().format('MMMM Do YYYY');
     var hourCheck = parseInt(moment().format('HH'),10);
     // FUNCTION DEFINITIONS
+    // Date display function on the header section
+    currentDate.text(timeZone);
     // clone timeblock row div element 
     function createElement(){
         for(var i=17; i>=9; i--){
