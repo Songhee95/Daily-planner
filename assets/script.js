@@ -6,6 +6,7 @@ $(document).ready(function(){
     var saveButton = $('.saveBtn');
     var ContainerRow = $('.row');
     var textArea = $('textarea');
+    var array =[];
     // JS VARIABLES
     var timeZone = moment().format('MMMM Do YYYY');
     var hourCheck = parseInt(moment().format('HH'),10);
@@ -56,4 +57,15 @@ $(document).ready(function(){
     // FUNCTION CALLS
  
     // EVENT LISTENERS
+    // If I click save button, the input is saved to local storage.
+    saveButton.on('click', function(){
+        var input = timeBlockDisplay.val();
+        localStorage.setItem('input', input);
+    })
+    // get stored item from local Storage
+    function init(){
+        var inputDisplay = localStorage.getItem('input');
+        timeBlockDisplay.text(inputDisplay);
+    }
+    init();
 })
