@@ -3,7 +3,7 @@ $(document).ready(function(){
     var hourDisplay =$('.hour');
     var timeBlockDisplay = $('.time-block');
     var saveButton = $('.saveBtn');
-    var ContainerRow = $('.container');
+    var ContainerRow = $('.row');
     var textArea = $('textarea');
     // JS VARIABLES
     var timeZone = moment().format('MMMM Do YYYY, h:mm:ss a');
