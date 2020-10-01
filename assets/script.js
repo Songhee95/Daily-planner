@@ -1,5 +1,6 @@
 $(document).ready(function(){
     // DOM VARIABLES
+    var currentDate = $('.lead');
     var hourDisplay =$('.hour');
     var timeBlockDisplay = $('.time-block');
     var saveButton = $('.saveBtn');
@@ -8,17 +9,16 @@ $(document).ready(function(){
     // JS VARIABLES
     var timeZone = moment().format('MMMM Do YYYY, h:mm:ss a');
     var hourCheck = parseInt(moment().format('HH'),10);
-    var ind;
     // FUNCTION DEFINITIONS
-    // clone .container element 
+    // clone timeblock row div element 
     function createElement(){
         for(var i=17; i>=9; i--){
+            // Verify the first time-block time(6pm) is pass or not
             validation();
-        // Verify the first time-block time(6pm) is pass or not
-        var rowClone = ContainerRow.clone();
-        rowClone.insertAfter(ContainerRow);
-        hourDisplay.empty();
-        // timeblock element create
+            var rowClone = ContainerRow.clone();
+            rowClone.insertAfter(ContainerRow);
+            hourDisplay.empty();
+            // timeblock element create
             if(i==12){
                 hourDisplay.append(i+'pm');
                 textArea.attr('value', i)
