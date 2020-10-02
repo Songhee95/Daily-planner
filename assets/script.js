@@ -16,6 +16,7 @@ $(document).ready(function(){
     // clone timeblock row div element 
     function createElement(){
         for(var i=17; i>=9; i--){
+            var a=JSON.parse(localStorage.getItem(i));
             // Verify the first time-block time(6pm) is pass or not
             validation();
             var rowClone = ContainerRow.clone();
@@ -24,14 +25,21 @@ $(document).ready(function(){
             // timeblock element create
             if(i==12){
                 hourDisplay.append(i+'pm');
-                textArea.attr('value', i)
+                textArea.attr('value', i);
+                saveButton.attr('value',i);
+                textArea.text(a);
+
             }else if(i>12){
                 var k=(i-12);
                 hourDisplay.append(k+'pm');
                 textArea.attr('value',i);
+                saveButton.attr('value',i);
+                textArea.text(a);
             }else{
                 hourDisplay.append(i +'am');
                 textArea.attr('value',i);
+                saveButton.attr('value',i);
+                textArea.text(a);
             }
         }
     }
@@ -57,15 +65,11 @@ $(document).ready(function(){
     // FUNCTION CALLS
  
     // EVENT LISTENERS
-    // If I click save button, the input is saved to local storage.
-    saveButton.on('click', function(){
-        var input = timeBlockDisplay.val();
-        localStorage.setItem('input', input);
+    // If I click save button, the input is saved to array and local Storage
+    $('.saveBtn').on('click', function(){
+        var keyName = $(this).attr('value');
+        var userInput = $(this).prev($('.textarea')).val();
+        array.push(userInput);
+        localStorage.setItem(keyName, JSON.stringify(array));
     })
-    // get stored item from local Storage
-    function init(){
-        var inputDisplay = localStorage.getItem('input');
-        timeBlockDisplay.text(inputDisplay);
-    }
-    init();
 })
