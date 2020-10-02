@@ -8,9 +8,13 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  font-family: 'Arima Madurai', cursive;
+}
+
+button{
+  border: none;
 }
 
 .jumbotron {
@@ -25,8 +29,7 @@ textarea{
   white-space: pre-wrap;
 }
 
-.time-block{
-  border-radius: 15px;
+.time-block{  
 }
 
 .row {
@@ -36,35 +39,50 @@ textarea{
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  padding-top:20px;
+  background-color: #999393;
+  color: #3b3838;
+  font-family: 'Marck Script', cursive;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #c8b8b8;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color:rgba(179, 131, 131, 0.836);
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: rgba(202, 117, 102, 0.774);
   color: white;
 }
 
 .saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  padding: 10px;
+  background-color: white;
   color: white;
+  text-align: left;
 }
-
+.saveBtn:active, .saveBtn:focus{
+  outline: none;
+}
+.saveBtn i{
+  width: 50px;
+  height: 50px;
+  border-radius: 1rem;
+  padding-top: 17px;
+  text-align: center;
+  background-color:rgba(155, 66, 66, 0.678);
+  color: rgb(233, 168, 161);
+}
 .saveBtn i:hover {
+  background-color:rgba(163, 128, 128, 0.678);
+  color: rgb(173, 93, 84);
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
