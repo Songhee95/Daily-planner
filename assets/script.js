@@ -6,7 +6,6 @@ $(document).ready(function(){
     var saveButton = $('.saveBtn');
     var ContainerRow = $('.row');
     var textArea = $('textarea');
-    var array =[];
     // JS VARIABLES
     var timeZone = moment().format('MMMM Do YYYY');
     var hourCheck = parseInt(moment().format('HH'),10);
@@ -69,7 +68,6 @@ $(document).ready(function(){
     $('.saveBtn').on('click', function(){
         var keyName = $(this).attr('value');
         var userInput = $(this).prev($('.textarea')).val();
-        array.push(userInput);
-        localStorage.setItem(keyName, JSON.stringify(array));
+        localStorage.setItem(keyName, JSON.stringify(userInput));
     })
 })
