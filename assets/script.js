@@ -4,8 +4,9 @@ $(document).ready(function(){
     var hourDisplay =$('.hour');
     var timeBlockDisplay = $('.time-block');
     var saveButton = $('.saveBtn');
-    var ContainerRow = $('.row');
+    var ContainerRow = $('.timeBlockWrap');
     var textArea = $('textarea');
+    var clearButton = $('.clearBtn');
     // JS VARIABLES
     var timeZone = moment().format('MMMM Do YYYY');
     var hourCheck = parseInt(moment().format('HH'),10);
@@ -58,16 +59,19 @@ $(document).ready(function(){
             timeBlockDisplay.addClass('future');
         }
     }
-    createElement();
-
-
     // FUNCTION CALLS
- 
+    createElement();
     // EVENT LISTENERS
     // If I click save button, the input is saved to array and local Storage
     $('.saveBtn').on('click', function(){
         var keyName = $(this).attr('value');
         var userInput = $(this).prev($('.textarea')).val();
         localStorage.setItem(keyName, JSON.stringify(userInput));
+    })
+    // if user clicks clearAll button, all the data is erased
+    clearButton.on('click', function(event){
+        event.preventDefault;
+        localStorage.clear();
+        $('textarea').val('');
     })
 })
