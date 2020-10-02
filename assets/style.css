@@ -1,6 +1,5 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
   line-height: 1;
 }
 
@@ -8,7 +7,6 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  border-left: 1px solid black;
   padding: 10px;
   font-family: 'Arima Madurai', cursive;
 }
@@ -28,17 +26,15 @@ button{
 .description{
   white-space: pre-wrap;
 }
-
-.time-block{  
-}
-
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 }
 
 .hour {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   padding-top:20px;
   background-color: #999393;
   color: #3b3838;
@@ -46,7 +42,12 @@ button{
   font-size: 2rem;
   font-weight: bold;
 }
-
+.time-block{
+  cursor: pointer;
+}
+.time-block:focus{
+  outline: none;
+}
 .past {
   background-color: #c8b8b8;
   color: white;
@@ -84,5 +85,25 @@ button{
   background-color:rgba(163, 128, 128, 0.678);
   color: rgb(173, 93, 84);
   font-size: 20px;
-  transition: all .3s ease-in-out;
+}
+.saveBtn i:active{
+  background-color: rgba(117, 91, 91, 0.678);
+  color: rgb(182, 44, 28);
+}
+.clearBtn{
+  margin: 10px;
+  border-radius: 2rem;
+  background-color: rgb(226, 219, 219);
+  font-family: 'Marck Script', cursive;
+  font-size:1.3rem;
+  font-weight: bolder;
+}
+.clearBtn:hover{
+  background-color: rgb(192, 186, 186);
+}
+.clearBtn:focus{
+  outline: none;
+}
+.clearBtn:active{
+  background-color: rgb(138, 134, 134);
 }
