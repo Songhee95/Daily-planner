@@ -39,15 +39,16 @@ button{
 .hour {
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  padding-top:20px;
+  padding-top:32px;
   background-color: #999393;
   color: #4b4747;
   font-family: 'Marck Script', cursive;
-  font-size: 2rem;
-  font-weight: bold;
+  font-weight: bolder;
 }
 .time-block{
   cursor: pointer;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .time-block:focus{
   outline: none;
@@ -99,8 +100,8 @@ button{
   border-radius: 2rem;
   background-color: rgb(226, 219, 219);
   font-family: 'Marck Script', cursive;
-  font-size:1.3rem;
   font-weight: bolder;
+  height: 40px;
 }
 .clearBtn:hover{
   background-color: rgb(192, 186, 186);
